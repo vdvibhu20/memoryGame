@@ -32,8 +32,8 @@ var grid = {
     },
 
     tileClicked: function(self) {
-       
-        if(noOfOpenTile< 2){
+        
+        if(noOfOpenTile< 2 && self!= tile1){
             self.flip();
 
             noOfOpenTile++;
@@ -60,6 +60,8 @@ var grid = {
                     setTimeout(function(){
                     tile1.flip();
                     tile2.flip();
+                    tile1= null;
+                    tile2= null;
                     noOfOpenTile-= 2;                        
                     }, 1000)                   
                 }
